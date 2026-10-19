@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIBE TETRIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="brand">
+      <h1 class="logo">VIBE</h1>
+      <p class="tagline">한 줄 더, 한 단계 더</p>
+    </header>
+
+    <section class="stage">
+      <aside class="panel panel-left">
+        <div class="stat">
+          <span class="stat-label">점수</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">라인</span>
+          <span class="stat-value" id="lines">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">레벨</span>
+          <span class="stat-value" id="level">1</span>
+        </div>
+      </aside>
+
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" aria-label="테트리스 보드"></canvas>
+        <div class="overlay" id="overlay">
+          <p class="overlay-title" id="overlay-title">START</p>
+          <p class="overlay-hint" id="overlay-hint">스페이스 또는 시작을 누르세요</p>
+          <button type="button" class="btn primary" id="btn-start">시작</button>
+        </div>
+      </div>
+
+      <aside class="panel panel-right">
+        <div class="next-box">
+          <span class="stat-label">다음</span>
+          <canvas id="next" width="120" height="120" aria-label="다음 블록"></canvas>
+        </div>
+        <div class="controls-hint">
+          <p><kbd>←</kbd><kbd>→</kbd> 이동</p>
+          <p><kbd>↑</kbd> / <kbd>X</kbd> 회전</p>
+          <p><kbd>↓</kbd> 소프트 드롭</p>
+          <p><kbd>Space</kbd> 하드 드롭</p>
+          <p><kbd>P</kbd> 일시정지</p>
+        </div>
+      </aside>
+    </section>
+
+    <nav class="touch-controls" aria-label="터치 조작">
+      <button type="button" class="btn touch" id="btn-left" aria-label="왼쪽">←</button>
+      <button type="button" class="btn touch" id="btn-rotate" aria-label="회전">↻</button>
+      <button type="button" class="btn touch" id="btn-down" aria-label="아래">↓</button>
+      <button type="button" class="btn touch" id="btn-right" aria-label="오른쪽">→</button>
+      <button type="button" class="btn touch accent" id="btn-drop" aria-label="하드 드롭">▼</button>
+    </nav>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
